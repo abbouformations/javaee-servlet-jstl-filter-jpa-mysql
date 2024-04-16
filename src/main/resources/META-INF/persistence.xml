@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence">
+	<persistence-unit name="unite1"
+		transaction-type="RESOURCE_LOCAL">
+		<!-- provider -->
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<properties>
+			<!-- Classes persistantes -->
+			<property name="hibernate.archive.autodetection"
+				value="class, hbm" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="use_sql_comments" value="true" />
+			<!-- connexion JDBC -->
+			<property name="hibernate.connection.driver_class"
+				value="com.mysql.cj.jdbc.Driver" />
+			<property name="hibernate.connection.url"
+				value="jdbc:mysql://localhost:3306/exemple_db_jpa?createDatabaseIfNotExist=true&amp;serverTimezone=UTC" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="root" />
+			<!-- création automatique du schéma -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<!-- Dialecte -->
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+		</properties>
+	</persistence-unit>
+</persistence>
